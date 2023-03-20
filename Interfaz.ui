@@ -111,6 +111,9 @@ border-radius: 5px;</string>
 color: rgb(0, 0, 0);
 border-radius: 5px;</string>
     </property>
+    <property name="text">
+     <string>Holaaa</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="BT_Eliminar">
     <property name="geometry">
