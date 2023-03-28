@@ -112,7 +112,7 @@ color: rgb(0, 0, 0);
 border-radius: 5px;</string>
     </property>
     <property name="text">
-     <string>Holaaa</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="BT_Eliminar">
@@ -281,7 +281,7 @@ border-radius: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>500</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
