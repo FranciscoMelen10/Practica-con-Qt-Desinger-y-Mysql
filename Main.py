@@ -1,9 +1,11 @@
-import Conexion
+from Datos import Conexion
 from PyQt5 import QtWidgets,uic
-estu = (3,"maria","lopez","2")
+from Datos import dt_estudiante
+
 
 def guardarEstudiantes(estu):
-    Conexion.Conexion.agregarEstudiante(estu)
+    print(Conexion.Conexion.getCursor())
+
 
 
 
