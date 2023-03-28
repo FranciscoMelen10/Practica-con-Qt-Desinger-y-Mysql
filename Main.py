@@ -4,7 +4,7 @@ from Datos import dt_estudiante
 
 
 def guardarEstudiantes(estu):
-    print(Conexion.Conexion.getCursor())
+    print(dt_estudiante.Dt_Estudiantes.listarEstudiantes())
 
 
 

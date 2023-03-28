@@ -1,14 +1,15 @@
+import Entidades
 from Datos import Conexion
+from Entidades import estudiantes
 
 class Dt_Estudiantes:
 
 
     @classmethod
     def listarEstudiantes(cls):
-        cursor = Conexion.obtenerConexion().cursor()
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
         cursor.execute("SELECT * FROM estudiantes")
         querys = cursor.fetchall()
-        print(querys)
         return querys
 
 
@@ -17,8 +18,8 @@ class Dt_Estudiantes:
     @classmethod
     def agregarEstudiante(cls, estu):
         try:
-            cursor = cls.obtenerConexion().cursor()
-            sql = (f"INSERT INTO estudiantes ( idestudiantes, nombre, apellido, grado) VALUES ('4', 'mario', 'simon', '2')")
+            cursor = Conexion.Conexion.getCursor()
+            sql = (f'''INSERT INTO estudiantes ( idestudiantes, nombre, apellido, grado) VALUES ('{Entidades.estudiantes.Estudiantes.getId()}','{Entidades.estudiantes.Estudiantes.getName()}','{Entidades.estudiantes.Estudiantes.getApellido()}','{Entidades.estudiantes.Estudiantes.getGrado()}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             print("Registrado")
