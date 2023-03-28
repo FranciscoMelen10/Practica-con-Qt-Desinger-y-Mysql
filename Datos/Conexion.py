@@ -3,8 +3,8 @@ import pymysql.cursors
 class Conexion:
     #recolecta los datos de la BD
     _DATABASE = 'Prueba_Estudiantes'
-    _USERNAME = 'root'
-    _PASSWORD = 'Kirito10.'
+    _USERNAME = ''
+    _PASSWORD = ''
     _HOST = 'localhost'
     _conexion = None
     _cursor = None
