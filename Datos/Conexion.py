@@ -3,8 +3,8 @@ import pymysql.cursors
 class Conexion:
     #recolecta los datos de la BD
     _DATABASE = 'Prueba_Estudiantes'
-    _USERNAME = 'francisco'
-    _PASSWORD = '1234'
+    _USERNAME = 'root'
+    _PASSWORD = 'Kirito10.'
     _HOST = 'localhost'
     _conexion = None
     _cursor = None
@@ -41,13 +41,12 @@ class Conexion:
                 print(f"Tu cursos shark: {cls._conexion}")
                 return cls._cursor
 
-
             except Exception as e:
                 print(f"Mira te salio esto mi shark:{e}")
                 return cls._cursor
 
-
-
+        else:
+            print("No hubo conexión a la DB")
 
 
 
