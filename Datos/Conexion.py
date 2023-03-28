@@ -30,6 +30,7 @@ class Conexion:
             return cls._conexion
         else:
             print("Si ya estabas conectado shark")
+            return cls._conexion
 
 
     @classmethod
@@ -38,10 +39,12 @@ class Conexion:
             try:
                 cls._conexion = cls.obtenerConexion().cursor()
                 print(f"Tu cursos shark: {cls._conexion}")
+                return cls._cursor
 
 
             except Exception as e:
                 print(f"Mira te salio esto mi shark:{e}")
+                return cls._cursor
 
 
 
