@@ -4,7 +4,7 @@ class Conexion:
     #recolecta los datos de la BD
     _DATABASE = 'Prueba_Estudiantes'
     _USERNAME = ''
-    _PASSWORD = ''
+    _PASSWORD = '.'
     _HOST = 'localhost'
     _conexion = None
     _cursor = None
