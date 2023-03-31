@@ -1,6 +1,4 @@
-import Entidades
 from Datos import Conexion
-from Entidades import estudiantes
 
 class Dt_Estudiantes:
 
@@ -9,16 +7,17 @@ class Dt_Estudiantes:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
             cursor.execute("SELECT * FROM estudiantes")
             querys = cursor.fetchall()
+            cursor.close()
             return querys
 
 
 
 
         @classmethod
-        def agregarEstudiante(cls, id, nombre, apellido, grado):
+        def agregarEstudiante(cls, nombre, apellido, grado):
             try:
                 cursor = Conexion.Conexion.obtenerConexion().cursor()
-                sql = (f'''INSERT INTO estudiantes ( idestudiantes, nombre, apellido, grado) VALUES ('{id}','{nombre}','{apellido}','{grado}')''')
+                sql = (f'''INSERT INTO estudiantes ( nombre, apellido, grado) VALUES ('{nombre}','{apellido}','{grado}')''')
                 cursor.execute(sql)
                 cursor.connection.commit()
                 cursor.close()
@@ -26,5 +25,3 @@ class Dt_Estudiantes:
 
             except Exception as ex:
                 print(f"Error: {ex}")
-
-

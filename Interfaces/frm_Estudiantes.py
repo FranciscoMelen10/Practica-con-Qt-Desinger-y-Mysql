@@ -3,6 +3,9 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QMessageBox
 from PyQt5.uic import loadUi
 
+from Datos import dt_estudiante
+
+
 class Form_Estudiante(QtWidgets.QMainWindow):
     def __init__(self):
         self.indicador = 0
@@ -12,10 +15,9 @@ class Form_Estudiante(QtWidgets.QMainWindow):
         self.BT_Guardar.clicked.connect(self.guardarEstudiantes)
 
     def guardarEstudiantes(self):
-        if not self.Line_Id.text() == "" and not self.Line_Nombre.text()== "" and not self.Line_Apellido.text()== "" and not self.Line_Grado.text()== "":
+        if not self.Line_Nombre.text()== "" and not self.Line_Apellido.text()== "" and not self.Line_Grado.text()== "":
             self.indicador = 1
-            #dt_estudiante.Dt_Estudiantes.agregarEstudiante(int(self.Line_Id.text()), self.Line_Nombre.text(),
-                                                       #self.Line_Apellido.text(), int(self.Line_Grado.text()))
+            dt_estudiante.Dt_Estudiantes.agregarEstudiante(self.Line_Nombre.text(),self.Line_Apellido.text(), int(self.Line_Grado.text()))
             self.mensaje(self.indicador)
             self.indicador = 0
             return self.indicador
