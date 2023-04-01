@@ -25,3 +25,16 @@ class Dt_Estudiantes:
 
             except Exception as ex:
                 print(f"Error: {ex}")
+
+        @classmethod
+        def editarEstudiante(cls,id ,nombre, apellido, grado):
+            try:
+                cursor = Conexion.Conexion.obtenerConexion().cursor()
+                sql = (f'''UPDATE estudiantes SET nombre = "{nombre}" , apellido = "{apellido}" , grado = "{grado}" WHERE idestudiantes = {id}''')
+                cursor.execute(sql)
+                cursor.connection.commit()
+                cursor.close()
+                print("Editado")
+
+            except Exception as ex:
+                print(f"Error: {ex}")

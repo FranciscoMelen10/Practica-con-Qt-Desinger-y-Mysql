@@ -97,24 +97,6 @@ color: rgb(0, 0, 0);
 border-radius: 5px;</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="Line_Id">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>80</y>
-      <width>191</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-border-radius: 5px;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="BT_Eliminar">
     <property name="geometry">
      <rect>
@@ -267,6 +249,16 @@ border-radius: 5px;</string>
      <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);
 border-radius: 5px;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="CB_Id">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>80</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
     </property>
    </widget>
   </widget>

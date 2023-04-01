@@ -1,7 +1,10 @@
 import sys
+
+from tkinter import ttk
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.uic import loadUi
+
 
 from Datos import dt_estudiante
 from Entidades import estudiantes
@@ -16,6 +19,15 @@ class Form_Estudiante(QtWidgets.QMainWindow):
 
         #Acciones de los botones
         self.BT_Guardar.clicked.connect(self.guardarEstudiantes)
+        self.BT_Editar.clicked.connect(self.editarEstudiantes)
+        self.BT_Limpiar.clicked.connect(self.limpiarTabla)
+
+        #Combo box
+        self.llenarCombobox(dt_estudiante.Dt_Estudiantes.listarEstudiantes())
+
+        #Tabla
+
+
 
 
     def guardarEstudiantes(self):
@@ -31,6 +43,19 @@ class Form_Estudiante(QtWidgets.QMainWindow):
             indicador = 0
             return indicador
 
+    def editarEstudiantes(self):
+        if not self.Line_Nombre.text()== "" and not self.Line_Apellido.text()== "" and not self.Line_Grado.text()== "":
+            self.indicador = 1
+            dt_estudiante.Dt_Estudiantes.editarEstudiante(int(self.Line_Id.text()),self.Line_Nombre.text(),self.Line_Apellido.text(), int(self.Line_Grado.text()))
+            self.mensaje(self.indicador)
+            self.indicador = 0
+            self.llenarTabla()
+
+        else:
+            self.mensaje(self.indicador)
+
+
+
     def mensaje(self,indicador):
         if indicador == 1:
             QMessageBox.about(self, "Registrado", "Datos registrados correctamente")
@@ -39,6 +64,7 @@ class Form_Estudiante(QtWidgets.QMainWindow):
             QMessageBox.about(self, "Error", "Error de registros de datos")
 
     def llenarTabla(self,datos):
+
         i=len(datos)
 
         self.TB_Estudiantes.setRowCount(i)
@@ -51,6 +77,19 @@ class Form_Estudiante(QtWidgets.QMainWindow):
             self.TB_Estudiantes.setItem(tablerow, 2, QTableWidgetItem((row["grado"])))
             tablerow = tablerow + 1
 
+    def limpiarTabla(self):
+        print("sdsdsa")
+        print(self.TB_Estudiantes.selectedItems())
+
+
+    def llenarCombobox(self,datos): #En proceso
+        i=len(datos)
+        com = ttk.Combobox()
+        com["values"] = ["ds","dsd"]
+        for row in datos:
+            print(row["idestudiantes"])
+
+            print(com)
 
 
 
