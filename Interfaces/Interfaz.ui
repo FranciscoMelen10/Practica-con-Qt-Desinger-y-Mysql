@@ -185,17 +185,12 @@ background-color: rgb(29, 255, 150);</string>
    <widget class="QTableWidget" name="TB_Estudiantes">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>240</y>
-      <width>401</width>
+      <x>90</x>
+      <y>250</y>
+      <width>301</width>
       <height>192</height>
      </rect>
     </property>
-    <column>
-     <property name="text">
-      <string>ID</string>
-     </property>
-    </column>
     <column>
      <property name="text">
       <string>Nombre</string>
