@@ -167,12 +167,24 @@ background-color: rgb(29, 255, 150);</string>
    <widget class="QTableWidget" name="TB_Estudiantes">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>250</y>
-      <width>301</width>
+      <x>50</x>
+      <y>240</y>
+      <width>401</width>
       <height>192</height>
      </rect>
     </property>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
     <column>
      <property name="text">
       <string>Nombre</string>
@@ -185,7 +197,7 @@ background-color: rgb(29, 255, 150);</string>
     </column>
     <column>
      <property name="text">
-      <string>Grado academico</string>
+      <string>Grado</string>
      </property>
     </column>
    </widget>
@@ -251,14 +263,22 @@ color: rgb(0, 0, 0);
 border-radius: 5px;</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="CB_Id">
+   <widget class="QLineEdit" name="Line_Id">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>80</y>
-      <width>201</width>
-      <height>22</height>
+      <width>191</width>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-radius: 5px;</string>
     </property>
    </widget>
   </widget>
@@ -268,7 +288,7 @@ border-radius: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>500</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
