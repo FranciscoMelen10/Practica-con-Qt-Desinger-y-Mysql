@@ -1,6 +1,5 @@
 import sys
 
-from tkinter import ttk
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.uic import loadUi
@@ -14,16 +13,14 @@ class Form_Estudiante(QtWidgets.QMainWindow):
     def __init__(self):
         self.indicador = 0
         super(Form_Estudiante,self).__init__()
-        loadUi(".\Interfaz.ui",self)
+        loadUi("Interfaz.ui",self)
         self.llenarTabla(dt_estudiante.Dt_Estudiantes.listarEstudiantes())
 
         #Acciones de los botones
         self.BT_Guardar.clicked.connect(self.guardarEstudiantes)
         self.BT_Editar.clicked.connect(self.editarEstudiantes)
-        self.BT_Limpiar.clicked.connect(self.limpiarTabla)
 
         #Combo box
-        self.llenarCombobox(dt_estudiante.Dt_Estudiantes.listarEstudiantes())
 
         #Tabla
 
@@ -66,30 +63,19 @@ class Form_Estudiante(QtWidgets.QMainWindow):
     def llenarTabla(self,datos):
 
         i=len(datos)
-
         self.TB_Estudiantes.setRowCount(i)
         tablerow = 0
 
         for row in datos:
             print(row)
-            self.TB_Estudiantes.setItem(tablerow,0,QTableWidgetItem((row["nombre"])))
-            self.TB_Estudiantes.setItem(tablerow, 1, QTableWidgetItem((row["apellido"])))
-            self.TB_Estudiantes.setItem(tablerow, 2, QTableWidgetItem((row["grado"])))
+            self.TB_Estudiantes.setItem(tablerow,0,QTableWidgetItem((row["idestudiantes"])))
+            self.TB_Estudiantes.setItem(tablerow,1,QTableWidgetItem((row["nombre"])))
+            self.TB_Estudiantes.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
+            self.TB_Estudiantes.setItem(tablerow, 3, QTableWidgetItem((row["grado"])))
             tablerow = tablerow + 1
 
-    def limpiarTabla(self):
-        print("sdsdsa")
-        print(self.TB_Estudiantes.selectedItems())
 
 
-    def llenarCombobox(self,datos): #En proceso
-        i=len(datos)
-        com = ttk.Combobox()
-        com["values"] = ["ds","dsd"]
-        for row in datos:
-            print(row["idestudiantes"])
-
-            print(com)
 
 
 
