@@ -164,43 +164,6 @@ background-color: rgb(29, 255, 150);</string>
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Estudiantes&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="TB_Estudiantes">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>240</y>
-      <width>401</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <column>
-     <property name="text">
-      <string>ID</string>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Nombre</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Apellido</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Grado</string>
-     </property>
-    </column>
-   </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
@@ -281,6 +244,39 @@ color: rgb(0, 0, 0);
 border-radius: 5px;</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="TB_Estudiantes">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>431</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>107</number>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>id</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>nombre</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>apellido</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>grado</string>
+     </property>
+    </column>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -288,7 +284,7 @@ border-radius: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>500</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
