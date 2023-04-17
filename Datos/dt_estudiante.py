@@ -21,7 +21,7 @@ class Dt_Estudiantes:
                 cursor.execute(sql)
                 cursor.connection.commit()
                 cursor.close()
-                print("Registrado")
+                print("Guardado")
 
             except Exception as ex:
                 print(f"Error: {ex}")
@@ -35,6 +35,20 @@ class Dt_Estudiantes:
                 cursor.connection.commit()
                 cursor.close()
                 print("Editado")
+
+            except Exception as ex:
+                print(f"Error: {ex}")
+
+
+        @classmethod
+        def eliminarEstudiante(cls,id):
+            try:
+                cursor = Conexion.Conexion.obtenerConexion().cursor()
+                sql = (f'''DELETE FROM estudiantes WHERE idestudiantes = {id}''')
+                cursor.execute(sql)
+                cursor.connection.commit()
+                cursor.close()
+                print("Eliminado")
 
             except Exception as ex:
                 print(f"Error: {ex}")
