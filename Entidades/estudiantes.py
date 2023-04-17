@@ -1,25 +1,25 @@
 
 class Estudiantes:
 
-    def __init__(self ,id ,nombre ,apellido ,grado):
-        self.id = id
+    def __init__(self ,idestudiantes ,nombre ,apellido ,grado):
+        self.idestudiantes = idestudiantes
         self.nombre = nombre
         self.apellido = apellido
         self.grado = grado
 
     def __str__(self):
         return f'''
-        id: {self.id}
+        idestudiantes: {self.idestudiantes}
         nombre: {self.nombre} 
         apellido: {self.apellido}
         grado: {self.grado}
         '''
 
-    def setId(self,id):
-        self.id = id
+    def setId(self,idestudiantes):
+        self.id = idestudiantes
 
     def getId(self):
-        return self.id
+        return self.idestudiantes
 
 
     def getName(self):
